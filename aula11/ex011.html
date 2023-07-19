@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gringo</title>
+    <style>
+        * {
+            border-radius: 15px;
+        }
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+        }
+
+        main {
+            width: 550px;
+            height: 500px;
+            background-image: linear-gradient(to bottom, gray, blue);
+        }
+        
+        h1, p, input, div {
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Teste de Nacionalidade</h1>
+        <p>Avalie sua Nacionalidade a partir do teste abaixo</p>
+        <p>Digite seu País de Nascimento</p><br>
+        <input type="text" name="txtnasceu" id="txtnasceu"> 
+        <input type="submit" value="Avaliar" onclick="avaliar()">
+        <div id="res">
+
+        </div>
+        <div id="r"></div>
+    </main>
+
+    <script>
+        function avaliar() {
+        var pais = window.document.getElementById('txtnasceu').value
+        //Devo adicionar o .value na frente para a "var" receber o valor do input
+        var res = window.document.getElementById('res')
+        var r = window.document.getElementById('r')
+        res.innerHTML = `Seu País é <strong>${pais}</strong>`
+        if (pais == 'Brasil') {
+            r.innerHTML = `Você é <strong>Brasileiro</strong>!`
+        } else {
+            r.innerHTML = 'Você é <strong>Estrangeiro</strong>!'
+        }
+    }
+    </script>
+</body>
+</html>
