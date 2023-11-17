@@ -19,3 +19,10 @@ for (var pos = 0;pos < valores.length;pos++) {
 for(var pos in valores) {
     console.log(`A posição ${pos} tem o valor ${valores[pos]}`)
 }
+
+//Podemos user o comando .reduce() para realizar a somatória do array. a Função do .reduce() é reduzir a quantidade de indices do array e armazenar os valores em apenas um, porém podemos utiliza-lo para somar todos os valores contidos, exatamente como o exemplo abaixo:
+let soma = valores.reduce(function(acumulador, valorAtual) {
+    return acumulador + valorAtual;
+  }, 0);
+
+  console.log('Somatória dos valores das posições:', soma);
